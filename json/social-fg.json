@@ -1,0 +1,308 @@
+[
+    {
+        "key": "group_65219e2a77a80",
+        "title": "Social",
+        "fields": [
+            {
+                "key": "field_65219e2b5bc88",
+                "label": "Facebook",
+                "name": "facebook",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "sub_fields": [
+                    {
+                        "key": "field_65219f325bc8a",
+                        "label": "Icon",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Font Awesome Icon",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "fab fa-facebook-f",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_65219f8a5bc8b",
+                        "label": "Url",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#",
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_65219fbf5bc8c",
+                "label": "Github",
+                "name": "github",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "sub_fields": [
+                    {
+                        "key": "field_65219fbf5bc8d",
+                        "label": "Icon",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Font Awesome Icon",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "fab fa-github",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_65219fbf5bc8e",
+                        "label": "Url",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#",
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_6521a0015bc8f",
+                "label": "Linkedin",
+                "name": "linkedin",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "sub_fields": [
+                    {
+                        "key": "field_6521a0015bc90",
+                        "label": "Icon",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Font Awesome Icon",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "fab fa-linkedin-in",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6521a0015bc91",
+                        "label": "Url",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#",
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_6521a0655bc92",
+                "label": "X (Formally known as Twitter)",
+                "name": "twitter",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "sub_fields": [
+                    {
+                        "key": "field_6521a0655bc93",
+                        "label": "Icon",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Font Awesome Icon",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "fab fa-twitter",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6521a0655bc94",
+                        "label": "Url",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#",
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_6521a0c75bc95",
+                "label": "Instagram",
+                "name": "instagram",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "sub_fields": [
+                    {
+                        "key": "field_6521a0c75bc96",
+                        "label": "Icon",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Font Awesome Icon",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "fab fa-instagram",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6521a0c75bc97",
+                        "label": "Url",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "#",
+                        "placeholder": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "12"
+                }
+            ],
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "15"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]
