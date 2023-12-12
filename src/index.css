@@ -954,10 +954,6 @@
     .about-container .left-about p {
       padding-left: 0;
     }
-    .timeline {
-      grid-template-columns: repeat(1, 1fr);
-      padding-bottom: 6rem;
-    }
     .container {
       padding: 2rem 2.5rem !important;
     }
@@ -1015,43 +1011,6 @@
     }
     .main-title h2 .bg-text {
       font-size: 2.3rem;
-    }
-  }
-  @media (max-width: 767.98px) {
-    .timeline::after {
-      left: 90px;
-    }
-    .t-container {
-      width: 100%;
-      padding-left: 120px;
-      padding-right: 30px;
-    }
-    .t-container.t-right {
-      left: 0%;
-    }
-    .t-container.t-left::after,
-    .t-container.t-right::after {
-      left: 82px;
-    }
-    .t-container.t-left::before,
-    .t-container.t-right::before {
-      left: 100px;
-      border-color: transparent #006E51 transparent transparent;
-    }
-    .t-container.t-left .t-date,
-    .t-container.t-right .t-date {
-      right: auto;
-      left: 15px;
-    }
-    .t-container.t-left .t-icon,
-    .t-container.t-right .t-icon {
-      right: auto;
-      left: 146px;
-    }
-    .t-container.t-left .t-content,
-    .t-container.t-right .t-content {
-      padding: 30px 30px 30px 90px;
-      border-radius: 500px 0 0 500px;
     }
   }
   @media screen and (max-width: 1432px) {
@@ -1154,9 +1113,6 @@
       grid-template-columns: repeat(1, 1fr);
     }
     .about-container .right-about {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .timeline {
       grid-template-columns: repeat(1, 1fr);
     }
     .main-title h2 {

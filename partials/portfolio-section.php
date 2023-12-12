@@ -1,19 +1,28 @@
 <?php
-$portfolio = get_field('portfolio');
+global $post;
 $args = array(
     'post_type' => 'project',
     'posts_per_page' => 3
 );
 $the_query = new WP_Query($args);
+$portfolio = get_field('portfolio');
 ?>
 
 <section class="section sec3 portfolio" id="portfolio">
-    <div class="main-title">
-        <h2><?php echo $portfolio['portfolio_h2']; ?></h2>
-    </div>
-    <p class="portfolio-text">
-        <?php echo $portfolio['portfolio_paragraph']; ?>
-    </p>
+    <?php if (have_rows('portfolio')) : ?>
+        <?php while (have_rows('hero')) : the_row();
+
+            // Get sub field values.
+            $header = get_sub_field('portfolio_h2');
+            $paragraph = get_sub_field('portfolio_paragraph');
+
+        ?>
+            <div class="main-title">
+                <h2><?php the_sub_field($header); ?></h2>
+            </div>
+            <p class="portfolio-text"><?php the_sub_field($paragraph); ?></p>
+        <?php endwhile; ?>
+    <?php endif; ?>
     <div class="portfolios">
         <?php if ($the_query->have_posts()) : ?>
 
@@ -22,7 +31,7 @@ $the_query = new WP_Query($args);
                     <div class="image">
                         <?php if (has_post_thumbnail()) : the_post_thumbnail(); ?>
                         <?php else : ?>
-                            <img src="<?php esc_url(get_template_directory_uri() . '/images/default-projects.jpg') ?>" />
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/default-projects.jpg') ?>" />
                         <?php endif; ?>
                     </div>
                     <div class="hover-item">
