@@ -1,6 +1,5 @@
 <?php
 $portfolio = get_field('portfolio');
-$projects = get_field
 $args = array(
     'post_type' => 'project',
     'posts_per_page' => 3
@@ -29,9 +28,9 @@ $the_query = new WP_Query($args);
                     <div class="hover-item">
                         <h3><?php the_title(); ?></h3>
                         <div class="icons">
-                            <a class="icon" href="<?php echo esc_attr( the_permalink($post) ); ?>"><i class="fas fa-info"></i></a>
-                            <a class="icon" href="<?php echo esc_attr( get_field('github_link') ); ?>"><i class="fab fa-github"></i></a>
-                            <a class="icon" href="<?php echo esc_attr( get_field('external_project_link') ); ?>"><i class="fas fa-external-link-alt"></i></a>
+                            <a class="icon" href="<?php echo esc_attr(the_permalink($post)); ?>"><i class="fas fa-info"></i></a>
+                            <a class="icon" href="<?php echo esc_attr(get_field('github_link')); ?>"><i class="fab fa-github"></i></a>
+                            <a class="icon" href="<?php echo esc_attr(get_field('external_project_link')); ?>"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
