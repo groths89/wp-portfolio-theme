@@ -9,19 +9,11 @@ $portfolio = get_field('portfolio');
 ?>
 
 <section class="section sec3 portfolio" id="portfolio">
-    <?php if (have_rows('portfolio')) : ?>
-        <?php while (have_rows('portfolio')) : the_row();
-
-            // Get sub field values.
-            $header = get_sub_field('portfolio_h2');
-            $paragraph = get_sub_field('portfolio_paragraph');
-
-        ?>
-            <div class="main-title">
-                <h2><?php the_sub_field($header); ?></h2>
-            </div>
-            <p class="portfolio-text"><?php the_sub_field($paragraph); ?></p>
-        <?php endwhile; ?>
+    <?php if ($portfolio) : ?>
+        <div class="main-title">
+            <h2><?php echo $portfolio['portfolio_h2']; ?></h2>
+        </div>
+        <p class="portfolio-text"><?php echo $portfolio['portfolio_paragraph']; ?></p>
     <?php endif; ?>
     <div class="portfolios">
         <?php if ($the_query->have_posts()) : ?>

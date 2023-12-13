@@ -59,9 +59,9 @@ $event = get_field('event');
                 <div class="abt-text">
                     <p class="large-text">
                         <?php
-                        if ($projects->have_posts()) {
-                            $count_projects = wp_count_posts('project')->publish;
-                            echo $count_projects;
+                        if ($events->have_posts()) {
+                            $count_events = wp_count_posts('event')->publish;
+                            echo $count_events;
                         } else {
                             echo 0;
                         }
@@ -77,17 +77,17 @@ $event = get_field('event');
         <?php if ($skills->have_posts()) : ?>
 
             <?php while ($skills->have_posts()) : $skills->the_post(); ?>
-                <?php if (have_rows('skill')) : var_dump($skill) ?>
+                <?php if ($skill) : var_dump($skill) ?>
                     <!-- Programming Skills -->
                     <h4 class="stat-title">Programming Skills</h4>
                     <div class="progress-bars">
-                        <?php if ($skill['category'] === 'Programming Skills') : ?>
+                        <?php if ($skill['category'] == 'Programming Skills') : ?>
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
                                     <p class="progress-text"><?php echo $skill['percentage']; ?></p>
                                     <div class="progress">
-                                        <span class="<?php $skill['class']; ?>"></span>
+                                        <span class="<?php echo $skill['class']; ?>"></span>
                                     </div>
                                 </div>
                             </div>
@@ -95,13 +95,13 @@ $event = get_field('event');
                     </div>
                     <h4 class="stat-title">Markup Skills</h4>
                     <div class="progress-bars">
-                        <?php if ($skill['category'] === 'Markup Skills') : ?>
+                        <?php if ($skill['category'] == 'Markup Skills') : ?>
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
                                     <p class="progress-text"><?php echo $skill['percentage']; ?></p>
                                     <div class="progress">
-                                        <span class="<?php $skill['class']; ?>"></span>
+                                        <span class="<?php echo $skill['class']; ?>"></span>
                                     </div>
                                 </div>
                             </div>
@@ -141,13 +141,13 @@ $event = get_field('event');
 
                     <h4 class="stat-title">Scripting Skills</h4>
                     <div class="progress-bars">
-                        <?php if ($skill['category'] === 'Scripting Skills') : ?>
+                        <?php if ($skill['category'] == 'Scripting Skills') : ?>
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
                                     <p class="progress-text"><?php echo $skill['percentage']; ?></p>
                                     <div class="progress">
-                                        <span class="<?php $skill['class']; ?>"></span>
+                                        <span class="<?php echo $skill['class']; ?>"></span>
                                     </div>
                                 </div>
                             </div>
@@ -196,13 +196,13 @@ $event = get_field('event');
 
                     <h4 class="stat-title">Other Skills</h4>
                     <div class="progress-bars">
-                        <?php if ($skill['category'] === 'Other Skills') : ?>
+                        <?php if ($skill['category'] == 'Other Skills') : ?>
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
                                     <p class="progress-text"><?php echo $skill['percentage']; ?></p>
                                     <div class="progress">
-                                        <span class="<?php $skill['class']; ?>"></span>
+                                        <span class="<?php echo $skill['class']; ?>"></span>
                                     </div>
                                 </div>
                             </div>
@@ -260,13 +260,13 @@ $event = get_field('event');
 
                     <h4 class="stat-title">Soft Skills</h4>
                     <div class="progress-bars">
-                        <?php if ($skill['category'] === 'Soft Skills') : ?>
+                        <?php if ($skill['category'] == 'Soft Skills') : ?>
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
                                     <p class="progress-text"><?php echo $skill['percentage']; ?></p>
                                     <div class="progress">
-                                        <span class="<?php $skill['class']; ?>"></span>
+                                        <span class="<?php echo $skill['class']; ?>"></span>
                                     </div>
                                 </div>
                             </div>
