@@ -57,8 +57,17 @@ $event = get_field('event');
             </div>
             <div class="about-item">
                 <div class="abt-text">
-                    <p class="large-text">560+</p>
-                    <p class="small-text">Cups of Coffee <br> Drank</p>
+                    <p class="large-text">
+                        <?php
+                        if ($projects->have_posts()) {
+                            $count_projects = wp_count_posts('project')->publish;
+                            echo $count_projects;
+                        } else {
+                            echo 0;
+                        }
+                        ?>
+                    </p>
+                    <p class="small-text">Events in <br> Software Development</p>
                 </div>
             </div>
         </div>
@@ -68,240 +77,242 @@ $event = get_field('event');
         <?php if ($skills->have_posts()) : ?>
 
             <?php while ($skills->have_posts()) : $skills->the_post(); ?>
-                <!-- Programming Skills -->
-                <h4 class="stat-title">Programming Skills</h4>
-                <div class="progress-bars">
-                    <?php if ($skill['category'] === 'Programming Skills') : ?>
+                <?php if (have_rows('skill')) : var_dump($skill) ?>
+                    <!-- Programming Skills -->
+                    <h4 class="stat-title">Programming Skills</h4>
+                    <div class="progress-bars">
+                        <?php if ($skill['category'] === 'Programming Skills') : ?>
+                            <div class="progress-bar">
+                                <p class="progress-title"><?php echo $skill['title']; ?></p>
+                                <div class="progress-container">
+                                    <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                    <div class="progress">
+                                        <span class="<?php $skill['class']; ?>"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <h4 class="stat-title">Markup Skills</h4>
+                    <div class="progress-bars">
+                        <?php if ($skill['category'] === 'Markup Skills') : ?>
+                            <div class="progress-bar">
+                                <p class="progress-title"><?php echo $skill['title']; ?></p>
+                                <div class="progress-container">
+                                    <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                    <div class="progress">
+                                        <span class="<?php $skill['class']; ?>"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="progress-bars">
+                        <!-- HTML -->
                         <div class="progress-bar">
-                            <p class="progress-title"><?php echo $skill['title']; ?></p>
+                            <p class="progress-title">html</p>
                             <div class="progress-container">
-                                <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                <p class="progress-text">90%</p>
                                 <div class="progress">
-                                    <span class="<?php $skill['class']; ?>"></span>
+                                    <span class="html"></span>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-                </div>
-                <h4 class="stat-title">Markup Skills</h4>
-                <div class="progress-bars">
-                    <?php if ($skill['category'] === 'Markup Skills') : ?>
+                        <!-- XML -->
                         <div class="progress-bar">
-                            <p class="progress-title"><?php echo $skill['title']; ?></p>
+                            <p class="progress-title">xml</p>
                             <div class="progress-container">
-                                <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                <p class="progress-text">20%</p>
                                 <div class="progress">
-                                    <span class="<?php $skill['class']; ?>"></span>
+                                    <span class="xml"></span>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-                </div>
-                <div class="progress-bars">
-                    <!-- HTML -->
-                    <div class="progress-bar">
-                        <p class="progress-title">html</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="html"></span>
+                        <div class="progress-bar">
+                            <p class="progress-title">css</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="css"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- XML -->
-                    <div class="progress-bar">
-                        <p class="progress-title">xml</p>
-                        <div class="progress-container">
-                            <p class="progress-text">20%</p>
-                            <div class="progress">
-                                <span class="xml"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">css</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="css"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <h4 class="stat-title">Scripting Skills</h4>
-                <div class="progress-bars">
-                    <?php if ($skill['category'] === 'Scripting Skills') : ?>
+                    <h4 class="stat-title">Scripting Skills</h4>
+                    <div class="progress-bars">
+                        <?php if ($skill['category'] === 'Scripting Skills') : ?>
+                            <div class="progress-bar">
+                                <p class="progress-title"><?php echo $skill['title']; ?></p>
+                                <div class="progress-container">
+                                    <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                    <div class="progress">
+                                        <span class="<?php $skill['class']; ?>"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="progress-bars">
+                        <!-- YAML -->
                         <div class="progress-bar">
-                            <p class="progress-title"><?php echo $skill['title']; ?></p>
+                            <p class="progress-title">yaml</p>
                             <div class="progress-container">
-                                <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                <p class="progress-text">90%</p>
                                 <div class="progress">
-                                    <span class="<?php $skill['class']; ?>"></span>
+                                    <span class="yaml"></span>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-                </div>
-                <div class="progress-bars">
-                    <!-- YAML -->
-                    <div class="progress-bar">
-                        <p class="progress-title">yaml</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="yaml"></span>
+                        <!-- Node -->
+                        <div class="progress-bar">
+                            <p class="progress-title">node</p>
+                            <div class="progress-container">
+                                <p class="progress-text">20%</p>
+                                <div class="progress">
+                                    <span class="node"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">bash</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="bash"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">git</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="git"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Node -->
-                    <div class="progress-bar">
-                        <p class="progress-title">node</p>
-                        <div class="progress-container">
-                            <p class="progress-text">20%</p>
-                            <div class="progress">
-                                <span class="node"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">bash</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="bash"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">git</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="git"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <h4 class="stat-title">Other Skills</h4>
-                <div class="progress-bars">
-                    <?php if ($skill['category'] === 'Other Skills') : ?>
+                    <h4 class="stat-title">Other Skills</h4>
+                    <div class="progress-bars">
+                        <?php if ($skill['category'] === 'Other Skills') : ?>
+                            <div class="progress-bar">
+                                <p class="progress-title"><?php echo $skill['title']; ?></p>
+                                <div class="progress-container">
+                                    <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                    <div class="progress">
+                                        <span class="<?php $skill['class']; ?>"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="progress-bars">
+                        <!-- Adobe CS -->
                         <div class="progress-bar">
-                            <p class="progress-title"><?php echo $skill['title']; ?></p>
+                            <p class="progress-title">adobe creative suite</p>
                             <div class="progress-container">
-                                <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                <p class="progress-text">90%</p>
                                 <div class="progress">
-                                    <span class="<?php $skill['class']; ?>"></span>
+                                    <span class="adobe"></span>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-                </div>
-                <div class="progress-bars">
-                    <!-- Adobe CS -->
-                    <div class="progress-bar">
-                        <p class="progress-title">adobe creative suite</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="adobe"></span>
+                        <!-- AWS -->
+                        <div class="progress-bar">
+                            <p class="progress-title">amazon web services</p>
+                            <div class="progress-container">
+                                <p class="progress-text">20%</p>
+                                <div class="progress">
+                                    <span class="aws"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">azure</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="azure"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">google cloud platform</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="gcp"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">jenkins</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="jenkins"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- AWS -->
-                    <div class="progress-bar">
-                        <p class="progress-title">amazon web services</p>
-                        <div class="progress-container">
-                            <p class="progress-text">20%</p>
-                            <div class="progress">
-                                <span class="aws"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">azure</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="azure"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">google cloud platform</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="gcp"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">jenkins</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="jenkins"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <h4 class="stat-title">Soft Skills</h4>
-                <div class="progress-bars">
-                    <?php if ($skill['category'] === 'Soft Skills') : ?>
+                    <h4 class="stat-title">Soft Skills</h4>
+                    <div class="progress-bars">
+                        <?php if ($skill['category'] === 'Soft Skills') : ?>
+                            <div class="progress-bar">
+                                <p class="progress-title"><?php echo $skill['title']; ?></p>
+                                <div class="progress-container">
+                                    <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                    <div class="progress">
+                                        <span class="<?php $skill['class']; ?>"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="progress-bars">
+                        <!-- Agile -->
                         <div class="progress-bar">
-                            <p class="progress-title"><?php echo $skill['title']; ?></p>
+                            <p class="progress-title">agile</p>
                             <div class="progress-container">
-                                <p class="progress-text"><?php echo $skill['percentage']; ?></p>
+                                <p class="progress-text">90%</p>
                                 <div class="progress">
-                                    <span class="<?php $skill['class']; ?>"></span>
+                                    <span class="agile"></span>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-                </div>
-                <div class="progress-bars">
-                    <!-- Agile -->
-                    <div class="progress-bar">
-                        <p class="progress-title">agile</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="agile"></span>
+                        <!-- Problem Solving -->
+                        <div class="progress-bar">
+                            <p class="progress-title">problem solving</p>
+                            <div class="progress-container">
+                                <p class="progress-text">20%</p>
+                                <div class="progress">
+                                    <span class="problem_solving"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">strategic thinking</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="strategic_thinking"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <p class="progress-title">researching</p>
+                            <div class="progress-container">
+                                <p class="progress-text">90%</p>
+                                <div class="progress">
+                                    <span class="researching"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Problem Solving -->
-                    <div class="progress-bar">
-                        <p class="progress-title">problem solving</p>
-                        <div class="progress-container">
-                            <p class="progress-text">20%</p>
-                            <div class="progress">
-                                <span class="problem_solving"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">strategic thinking</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="strategic_thinking"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="progress-title">researching</p>
-                        <div class="progress-container">
-                            <p class="progress-text">90%</p>
-                            <div class="progress">
-                                <span class="researching"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             <?php endwhile; ?>
 
             <?php wp_reset_postdata(); ?>
