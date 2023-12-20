@@ -77,11 +77,11 @@ $event = get_field('event');
         <?php if ($skills->have_posts()) : ?>
 
             <?php while ($skills->have_posts()) : $skills->the_post(); ?>
-                <?php if ($skill) : var_dump($skill) ?>
-                    <!-- Programming Skills -->
-                    <h4 class="stat-title">Programming Skills</h4>
-                    <div class="progress-bars">
-                        <?php if ($skill['category'] == 'Programming Skills') : ?>
+                <?php if ($skill) : ?>
+                    <?php if ($skill['category'] == 'Programming Skills') : ?>
+                        <!-- Programming Skills -->
+                        <h4 class="stat-title">Programming Skills</h4>
+                        <div class="progress-bars">
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
@@ -91,11 +91,12 @@ $event = get_field('event');
                                     </div>
                                 </div>
                             </div>
-                        <?php endif; ?>
-                    </div>
-                    <h4 class="stat-title">Markup Skills</h4>
-                    <div class="progress-bars">
-                        <?php if ($skill['category'] == 'Markup Skills') : ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($skill['category'] == 'Markup Skills') : ?>
+                        <!-- Markup Skills -->
+                        <h4 class="stat-title">Markup Skills</h4>
+                        <div class="progress-bars">
                             <div class="progress-bar">
                                 <p class="progress-title"><?php echo $skill['title']; ?></p>
                                 <div class="progress-container">
@@ -105,8 +106,8 @@ $event = get_field('event');
                                     </div>
                                 </div>
                             </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                     <div class="progress-bars">
                         <!-- HTML -->
                         <div class="progress-bar">

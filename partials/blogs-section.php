@@ -13,9 +13,9 @@ $post_query = new WP_Query($args);
             <h2><?php echo $blog['blogs_h2']; ?></h2>
         </div>
         <?php if ($post_query->have_posts()) : ?>
-            <?php while ($post_query->have_posts()) :
-                $post_query->the_post(); ?>
-                <div class="blogs">
+            <div class="blogs">
+                <?php while ($post_query->have_posts()) :
+                    $post_query->the_post(); ?>
                     <div class="blog">
                         <?php if (has_post_thumbnail()) : the_post_thumbnail(); ?>
                         <?php else : ?>
@@ -26,8 +26,8 @@ $post_query = new WP_Query($args);
                             <p><?php the_excerpt(); ?></p>
                         </div>
                     </div>
-                </div>
-            <?php endwhile; ?>
+                <?php endwhile; ?>
+            </div>
         <?php endif; ?>
     </div>
 </section>

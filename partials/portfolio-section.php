@@ -14,6 +14,11 @@ $portfolio = get_field('portfolio');
             <h2><?php echo $portfolio['portfolio_h2']; ?></h2>
         </div>
         <p class="portfolio-text"><?php echo $portfolio['portfolio_paragraph']; ?></p>
+    <?php else : ?>
+        <div class="main-title">
+            <h2>My <span>Portfolio</span></h2>
+        </div>
+        <p class="portfolio-text">Here is a list of my projects that I have worked on. I have worked on a variety of projects, ranging from web development to mobile development.</p>
     <?php endif; ?>
     <div class="portfolios">
         <?php if ($the_query->have_posts()) : ?>
