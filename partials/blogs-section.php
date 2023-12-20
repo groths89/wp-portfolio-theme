@@ -19,7 +19,7 @@ $post_query = new WP_Query($args);
                     <div class="blog">
                         <?php if (has_post_thumbnail()) : the_post_thumbnail(); ?>
                         <?php else : ?>
-                            <img src="<?php esc_url(get_template_directory_uri() . '/images/default-blogs.jpg') ?>" />
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/default-blogs.jpg') ?>" />
                         <?php endif; ?>
                         <div class="blog-text">
                             <h4><a href="<?php the_permalink($post) ?>"><?php the_title(); ?></a></h4>
