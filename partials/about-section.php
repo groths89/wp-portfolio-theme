@@ -64,7 +64,6 @@ $event = get_field('event');
 ?>
 
 <section class="section sec2 about" id="about">
-    <?php print_r($skill_category); ?>
     <div class="main-title">
         <h2><?php echo $about['about_h2']; ?></h2>
     </div>
@@ -245,18 +244,18 @@ $event = get_field('event');
     <h4 class="stat-title">My Timeline</h4>
     <?php if ($events->have_posts()) : ?>
         <div class="timeline-container">
-            <?php while ($events->have_posts()) : $events->the_post(); ?>
-                <div class="timeline">
-                    <div class="outer">
+            <div class="timeline">
+                <div class="outer">
+                    <?php while ($events->have_posts()) : $events->the_post(); ?>
                         <div class="t-card">
                             <div class="t-info">
                                 <h3 class="t-title"><?php the_title() ?></h3>
                                 <p><?php the_content() ?></p>
                             </div>
                         </div>
-                    </div>
+                    <?php endwhile; ?>
                 </div>
-            <?php endwhile; ?>
+            </div>
         </div>
     <?php endif; ?>
 </section>
