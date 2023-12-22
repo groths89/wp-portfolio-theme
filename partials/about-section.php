@@ -1,6 +1,7 @@
 <?php
 global $post;
 $projects = new WP_Query(array('post_type' => 'project'));
+$skills = new WP_Query(array('post_type' => 'skill'));
 $programmingSkillsQuery = new WP_Query(array(
     'post_type' => 'skill',
     'tax_query' => array(
