@@ -1,7 +1,56 @@
 <?php
 global $post;
 $projects = new WP_Query(array('post_type' => 'project'));
-$skills = new WP_Query(array('post_type' => 'skill'));
+$programmingSkillsQuery = new WP_Query(array(
+    'post_type' => 'skill',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'skill-category',
+            'field' => 'slug',
+            'terms' => 'Programming Skills',
+        )
+    ),
+));
+$markupSkillsQuery = new WP_Query(array(
+    'post_type' => 'skill',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'skill-category',
+            'field' => 'slug',
+            'terms' => 'Markup Skills',
+        )
+    ),
+));
+$scriptingSkillsQuery = new WP_Query(array(
+    'post_type' => 'skill',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'skill-category',
+            'field' => 'slug',
+            'terms' => 'Scripting Skills',
+        )
+    ),
+));
+$otherSkillsQuery = new WP_Query(array(
+    'post_type' => 'skill',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'skill-category',
+            'field' => 'slug',
+            'terms' => 'Other Skills',
+        )
+    ),
+));
+$softSkillsQuery = new WP_Query(array(
+    'post_type' => 'skill',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'skill-category',
+            'field' => 'slug',
+            'terms' => 'Soft Skills',
+        )
+    ),
+));
 $events = new WP_Query(array('post_type' => 'event'));
 $about = get_field('about');
 $skill = get_field('skill');
@@ -78,90 +127,115 @@ $event = get_field('event');
     </div>
 
     <div class="about-stats">
-        <?php if ($skills->have_posts()) : ?>
-
-            <?php while ($skills->have_posts()) : $skills->the_post(); ?>
+        <?php if ($programmingSkillsQuery->have_posts()) : ?>
+            <!-- Programming Skills -->
+            <?php if ($skill) : ?>
+                <h4 class="stat-title"><?php echo $skill_category ?></h4>
+            <?php endif; ?>
+            <?php while ($programmingSkillsQuery->have_posts()) : $programmingSkillsQuery->the_post(); ?>
                 <?php if ($skill) : ?>
-                    <?php if ($skill_category == 'Programming Skills') : ?>
-                        <!-- Programming Skills -->
-                        <h4 class="stat-title">Programming Skills</h4>
-                        <div class="progress-bars">
-                            <div class="progress-bar">
-                                <p class="progress-title"><?php echo $skill_title; ?></p>
-                                <div class="progress-container">
-                                    <p class="progress-text"><?php echo $skill_percentage; ?></p>
-                                    <div class="progress">
-                                        <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
-                                    </div>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <p class="progress-title"><?php echo $skill_title; ?></p>
+                            <div class="progress-container">
+                                <p class="progress-text"><?php echo $skill_percentage; ?></p>
+                                <div class="progress">
+                                    <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
                                 </div>
                             </div>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($skill_category == 'Markup Skills') : ?>
-                        <!-- Markup Skills -->
-                        <h4 class="stat-title">Markup Skills</h4>
-                        <div class="progress-bars">
-                            <div class="progress-bar">
-                                <p class="progress-title"><?php echo  $skill_title; ?></p>
-                                <div class="progress-container">
-                                    <p class="progress-text"><?php echo $skill_percentage; ?></p>
-                                    <div class="progress">
-                                        <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($skill_category == 'Scripting Skills') : ?>
-                        <!-- Scripting Skills -->
-                        <h4 class="stat-title">Scripting Skills</h4>
-                        <div class="progress-bars">
-                            <div class="progress-bar">
-                                <p class="progress-title"><?php echo  $skill_title; ?></p>
-                                <div class="progress-container">
-                                    <p class="progress-text"><?php echo $skill_percentage; ?></p>
-                                    <div class="progress">
-                                        <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($skill_category == 'Other Skills') : ?>
-                        <!-- Other Skills -->
-                        <h4 class="stat-title">Other Skills</h4>
-                        <div class="progress-bars">
-                            <div class="progress-bar">
-                                <p class="progress-title"><?php echo  $skill_title; ?></p>
-                                <div class="progress-container">
-                                    <p class="progress-text"><?php echo $skill_percentage; ?></p>
-                                    <div class="progress">
-                                        <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($skill_category == 'Soft Skills') : ?>
-                        <!-- Soft Skills -->
-                        <h4 class="stat-title">Soft Skills</h4>
-                        <div class="progress-bars">
-                            <div class="progress-bar">
-                                <p class="progress-title"><?php echo  $skill_title; ?></p>
-                                <div class="progress-container">
-                                    <p class="progress-text"><?php echo $skill_percentage; ?></p>
-                                    <div class="progress">
-                                        <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
+                    </div>
                 <?php endif; ?>
             <?php endwhile; ?>
-
             <?php wp_reset_postdata(); ?>
-
+        <?php endif; ?>
+        <?php if ($markupSkillsQuery->have_posts()) : ?>
+            <!-- Markup Skills -->
+            <?php if ($skill) : ?>
+                <h4 class="stat-title"><?php echo $skill_category ?></h4>
+            <?php endif; ?>
+            <?php while ($markupSkillsQuery->have_posts()) : $markupSkillsQuery->the_post(); ?>
+                <?php if ($skill) : ?>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <p class="progress-title"><?php echo  $skill_title; ?></p>
+                            <div class="progress-container">
+                                <p class="progress-text"><?php echo $skill_percentage; ?></p>
+                                <div class="progress">
+                                    <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+        <?php if ($scriptingSkillsQuery->have_posts()) : ?>
+            <!-- Scripting Skills -->
+            <?php if ($skill) : ?>
+                <h4 class="stat-title"><?php echo $skill_category ?></h4>
+            <?php endif; ?>
+            <?php while ($scriptingSkillsQuery->have_posts()) : $scriptingSkillsQuery->the_post(); ?>
+                <?php if ($skill) : ?>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <p class="progress-title"><?php echo  $skill_title; ?></p>
+                            <div class="progress-container">
+                                <p class="progress-text"><?php echo $skill_percentage; ?></p>
+                                <div class="progress">
+                                    <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+        <?php if ($otherSkillsQuery->have_posts()) : ?>
+            <!-- Other Skills -->
+            <?php if ($skill) : ?>
+                <h4 class="stat-title"><?php echo $skill_category ?></h4>
+            <?php endif; ?>
+            <?php while ($otherSkillsQuery->have_posts()) : $otherSkillsQuery->the_post(); ?>
+                <?php if ($skill) : ?>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <p class="progress-title"><?php echo  $skill_title; ?></p>
+                            <div class="progress-container">
+                                <p class="progress-text"><?php echo $skill_percentage; ?></p>
+                                <div class="progress">
+                                    <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+        <?php if ($softSkillsQuery->have_posts()) : ?>
+            <!-- Soft Skills -->
+            <?php if ($skill) : ?>
+                <h4 class="stat-title"><?php echo $skill_category ?></h4>
+            <?php endif; ?>
+            <?php while ($softSkillsQuery->have_posts()) : $softSkillsQuery->the_post(); ?>
+                <?php if ($skill) : ?>
+                    <div class="progress-bars">
+                        <div class="progress-bar">
+                            <p class="progress-title"><?php echo  $skill_title; ?></p>
+                            <div class="progress-container">
+                                <p class="progress-text"><?php echo $skill_percentage; ?></p>
+                                <div class="progress">
+                                    <span class="<?php echo $skill_class_name; ?>" style="width: <?php echo $skill_percentage; ?>;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
         <?php endif; ?>
     </div>
 
