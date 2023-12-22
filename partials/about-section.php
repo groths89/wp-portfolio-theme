@@ -1,6 +1,7 @@
 <?php
 global $post;
 $term = get_queried_object();
+print_r($term);
 $projects = new WP_Query(array('post_type' => 'project'));
 $skills = new WP_Query(array('post_type' => 'skill'));
 $programmingSkillsQuery = new WP_Query(array(
