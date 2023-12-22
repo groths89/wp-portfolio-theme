@@ -6,7 +6,7 @@ function portfolio_files()
   wp_enqueue_style('gstatic-fonts', 'https://fonts.gstatic.com');
   wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
   wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), true);
-  wp_enqueue_style('main-portfolio-css', get_theme_file_uri('/build/index.css'), null, '2.0', true);
+  wp_enqueue_style('main-portfolio-css', get_theme_file_uri('/build/index.css'));
 
   wp_localize_script(
     'main-portfolio-js',
