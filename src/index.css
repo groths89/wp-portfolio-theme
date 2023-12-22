@@ -453,14 +453,14 @@
   }
 
   .timeline {
-    background: #212121;
+    background: #141128;
     margin: 20px auto;
     padding: 20px;    
   }
   /* Card container */
   .t-card {
     position: relative;
-    max-width: 400px;
+    max-width: 1200px;
   }
 
   /* setting padding based on even or odd */
