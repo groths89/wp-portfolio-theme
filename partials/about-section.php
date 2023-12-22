@@ -1,7 +1,6 @@
 <?php
 global $post;
 $term = get_queried_object();
-print_r($term);
 $projects = new WP_Query(array('post_type' => 'project'));
 $skills = new WP_Query(array('post_type' => 'skill'));
 $programmingSkillsQuery = new WP_Query(array(
@@ -65,6 +64,7 @@ $event = get_field('event');
 ?>
 
 <section class="section sec2 about" id="about">
+    <?php print_r($skill_category); ?>
     <div class="main-title">
         <h2><?php echo $about['about_h2']; ?></h2>
     </div>
