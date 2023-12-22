@@ -1,5 +1,6 @@
 <?php
 global $post;
+$term = get_queried_object();
 $projects = new WP_Query(array('post_type' => 'project'));
 $skills = new WP_Query(array('post_type' => 'skill'));
 $programmingSkillsQuery = new WP_Query(array(
@@ -55,10 +56,10 @@ $softSkillsQuery = new WP_Query(array(
 $events = new WP_Query(array('post_type' => 'event'));
 $about = get_field('about');
 $skill = get_field('skill');
-$skill_category = get_field('gpr_skill_category');
-$skill_title = get_field('gpr_skill_title');
-$skill_percentage = get_field('gpr_skill_percentage');
-$skill_class_name = get_field('gpr_skill_class_name');
+$skill_category = get_field('gpr_skill_category', $term);
+$skill_title = get_field('gpr_skill_title', $term);
+$skill_percentage = get_field('gpr_skill_percentage', $term);
+$skill_class_name = get_field('gpr_skill_class_name', $term);
 $event = get_field('event');
 ?>
 
@@ -121,7 +122,7 @@ $event = get_field('event');
                         }
                         ?>
                     </p>
-                    <p class="small-text">Events in <br> Software Development</p>
+                    <p class="small-text">Career <br> Events</p>
                 </div>
             </div>
         </div>
@@ -133,9 +134,9 @@ $event = get_field('event');
             <?php if ($skill) : ?>
                 <h4 class="stat-title"><?php echo $skill_category ?></h4>
             <?php endif; ?>
-            <?php while ($programmingSkillsQuery->have_posts()) : $programmingSkillsQuery->the_post(); ?>
-                <?php if ($skill) : ?>
-                    <div class="progress-bars">
+            <div class="progress-bars">
+                <?php while ($programmingSkillsQuery->have_posts()) : $programmingSkillsQuery->the_post(); ?>
+                    <?php if ($skill) : ?>
                         <div class="progress-bar">
                             <p class="progress-title"><?php echo $skill_title; ?></p>
                             <div class="progress-container">
@@ -145,9 +146,9 @@ $event = get_field('event');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-            <?php endwhile; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
         <?php if ($markupSkillsQuery->have_posts()) : ?>
@@ -155,9 +156,9 @@ $event = get_field('event');
             <?php if ($skill) : ?>
                 <h4 class="stat-title"><?php echo $skill_category ?></h4>
             <?php endif; ?>
-            <?php while ($markupSkillsQuery->have_posts()) : $markupSkillsQuery->the_post(); ?>
-                <?php if ($skill) : ?>
-                    <div class="progress-bars">
+            <div class="progress-bars">
+                <?php while ($markupSkillsQuery->have_posts()) : $markupSkillsQuery->the_post(); ?>
+                    <?php if ($skill) : ?>
                         <div class="progress-bar">
                             <p class="progress-title"><?php echo  $skill_title; ?></p>
                             <div class="progress-container">
@@ -167,9 +168,9 @@ $event = get_field('event');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-            <?php endwhile; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
         <?php if ($scriptingSkillsQuery->have_posts()) : ?>
@@ -177,9 +178,9 @@ $event = get_field('event');
             <?php if ($skill) : ?>
                 <h4 class="stat-title"><?php echo $skill_category ?></h4>
             <?php endif; ?>
-            <?php while ($scriptingSkillsQuery->have_posts()) : $scriptingSkillsQuery->the_post(); ?>
-                <?php if ($skill) : ?>
-                    <div class="progress-bars">
+            <div class="progress-bars">
+                <?php while ($scriptingSkillsQuery->have_posts()) : $scriptingSkillsQuery->the_post(); ?>
+                    <?php if ($skill) : ?>
                         <div class="progress-bar">
                             <p class="progress-title"><?php echo  $skill_title; ?></p>
                             <div class="progress-container">
@@ -189,9 +190,9 @@ $event = get_field('event');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-            <?php endwhile; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
         <?php if ($otherSkillsQuery->have_posts()) : ?>
@@ -199,9 +200,9 @@ $event = get_field('event');
             <?php if ($skill) : ?>
                 <h4 class="stat-title"><?php echo $skill_category ?></h4>
             <?php endif; ?>
-            <?php while ($otherSkillsQuery->have_posts()) : $otherSkillsQuery->the_post(); ?>
-                <?php if ($skill) : ?>
-                    <div class="progress-bars">
+            <div class="progress-bars">
+                <?php while ($otherSkillsQuery->have_posts()) : $otherSkillsQuery->the_post(); ?>
+                    <?php if ($skill) : ?>
                         <div class="progress-bar">
                             <p class="progress-title"><?php echo  $skill_title; ?></p>
                             <div class="progress-container">
@@ -211,9 +212,9 @@ $event = get_field('event');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-            <?php endwhile; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
         <?php if ($softSkillsQuery->have_posts()) : ?>
@@ -221,9 +222,9 @@ $event = get_field('event');
             <?php if ($skill) : ?>
                 <h4 class="stat-title"><?php echo $skill_category ?></h4>
             <?php endif; ?>
-            <?php while ($softSkillsQuery->have_posts()) : $softSkillsQuery->the_post(); ?>
-                <?php if ($skill) : ?>
-                    <div class="progress-bars">
+            <div class="progress-bars">
+                <?php while ($softSkillsQuery->have_posts()) : $softSkillsQuery->the_post(); ?>
+                    <?php if ($skill) : ?>
                         <div class="progress-bar">
                             <p class="progress-title"><?php echo  $skill_title; ?></p>
                             <div class="progress-container">
@@ -233,9 +234,9 @@ $event = get_field('event');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-            <?php endwhile; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
             <?php wp_reset_postdata(); ?>
         <?php endif; ?>
     </div>
