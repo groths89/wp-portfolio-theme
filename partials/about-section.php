@@ -7,7 +7,7 @@ $programmingSkillsQuery = new WP_Query(array(
     'post_type' => 'skill',
     'tax_query' => array(
         array(
-            'taxonomy' => 'skill-category',
+            'taxonomy' => 'programming-skills',
             'field' => 'slug',
             'terms' => 'Programming Skills',
         )
@@ -17,7 +17,7 @@ $markupSkillsQuery = new WP_Query(array(
     'post_type' => 'skill',
     'tax_query' => array(
         array(
-            'taxonomy' => 'skill-category',
+            'taxonomy' => 'markup-skills',
             'field' => 'slug',
             'terms' => 'Markup Skills',
         )
@@ -27,7 +27,7 @@ $scriptingSkillsQuery = new WP_Query(array(
     'post_type' => 'skill',
     'tax_query' => array(
         array(
-            'taxonomy' => 'skill-category',
+            'taxonomy' => 'scripting-skills',
             'field' => 'slug',
             'terms' => 'Scripting Skills',
         )
@@ -37,7 +37,7 @@ $otherSkillsQuery = new WP_Query(array(
     'post_type' => 'skill',
     'tax_query' => array(
         array(
-            'taxonomy' => 'skill-category',
+            'taxonomy' => 'other-skills',
             'field' => 'slug',
             'terms' => 'Other Skills',
         )
@@ -47,7 +47,7 @@ $softSkillsQuery = new WP_Query(array(
     'post_type' => 'skill',
     'tax_query' => array(
         array(
-            'taxonomy' => 'skill-category',
+            'taxonomy' => 'soft-skills',
             'field' => 'slug',
             'terms' => 'Soft Skills',
         )
