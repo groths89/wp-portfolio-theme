@@ -6,7 +6,7 @@ function portfolio_files()
   wp_enqueue_style('gstatic-fonts', 'https://fonts.gstatic.com');
   wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
   wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), true);
-  wp_enqueue_style('main-portfolio-css', get_theme_file_uri('/build/index.css'));
+  wp_enqueue_style('main-portfolio-css', get_theme_file_uri('/build/index.css'), null, '2.0', true);
 
   wp_localize_script(
     'main-portfolio-js',
@@ -37,7 +37,8 @@ add_action('after_setup_theme', 'portfolio_features');
 add_filter('body_class', 'portfolio_body_class');
 
 
-function register_header_block_type() {
+function register_header_block_type()
+{
   register_block_type(
     'portfolio2023/header-section',
     array(
@@ -48,7 +49,7 @@ function register_header_block_type() {
       'icon' => 'editor_paste-text',
       'keywords' => array('front page', 'portfolio', 'header')
     )
-    );
+  );
 }
 
 add_action('init', 'register_header_block_type');
