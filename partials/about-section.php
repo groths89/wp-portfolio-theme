@@ -54,13 +54,13 @@ $softSkillsQuery = new WP_Query(array(
     ),
 ));
 $events = new WP_Query(array('post_type' => 'events'));
-$about = get_field('about');
-$skill = get_field('skill');
+$about = get_field('gpr_about');
+$skill = get_field('gpr_skill');
 $skill_category = get_field('gpr_skill_category', $term);
 $skill_title = get_field('gpr_skill_title', $term);
 $skill_percentage = get_field('gpr_skill_percentage', $term);
 $skill_class_name = get_field('gpr_skill_class_name', $term);
-$event = get_field('event');
+$event = get_field('gpr_event');
 ?>
 
 <section class="section sec2 about" id="about">
@@ -78,7 +78,7 @@ $event = get_field('event');
                     <p class="large-text">
                         <?php
                         if ($projects->have_posts()) {
-                            $count_projects = wp_count_posts('project')->publish;
+                            $count_projects = wp_count_posts('projects')->publish;
                             echo $count_projects;
                         }
                         ?>
@@ -91,7 +91,7 @@ $event = get_field('event');
                     <p class="large-text">
                         <?php
                         if ($skills->have_posts()) {
-                            $count_skills = wp_count_posts('skill')->publish;
+                            $count_skills = wp_count_posts('skills')->publish;
                             echo $count_skills;
                         }
                         ?>
@@ -115,7 +115,7 @@ $event = get_field('event');
                     <p class="large-text">
                         <?php
                         if ($events->have_posts()) {
-                            $count_events = wp_count_posts('event')->publish;
+                            $count_events = wp_count_posts('events')->publish;
                             echo $count_events;
                         } else {
                             echo 0;

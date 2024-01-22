@@ -1,5 +1,5 @@
 <?php
-$blog = get_field('blogs');
+$blog = get_field('gpr_blogs');
 
 $args = array(
     'post_type' => 'post'
