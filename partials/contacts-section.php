@@ -1,59 +1,61 @@
 <?php
-    $page = get_all_page_ids();
-    $contact = get_field('contact', '12');
-    $facebook = get_field('facebook', '12');
-    $github = get_field('github', '12');
-    $linkedin = get_field('linkedin', '12');
-    $twitter = get_field('twitter', '12');
-    $instagram = get_field('instagram', '12');
+$page = get_all_page_ids();
+$contact = get_field('gpr_contact');
+$facebook = get_field('gpr_facebook');
+$github = get_field('gpr_github');
+$linkedin = get_field('gpr_linkedin');
+$twitter = get_field('gpr_twitter');
+$instagram = get_field('gpr_instagram');
 ?>
 <section class="section sec5 contact" id="contact">
     <div class="contact-container">
         <div class="main-title">
-        <?php if($contact): ?>
-            <h2><?php echo $contact['contact_h2']; ?></h2>
-        <?php endif; ?>
+            <?php if ($contact) : ?>
+                <h2><?php echo $contact['gpr_contact_h2']; ?></h2>
+            <?php else : ?>
+                <h2>Contact <span>Me</span></h2>
+            <?php endif; ?>
         </div>
         <div class="contact-content-container">
             <div class="left-contact">
-            <?php if($contact): ?>
-                <h4><?php echo $contact['contact_h4']; ?></h4>
-                <p><?php echo $contact['contact_paragraph']; ?></p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Location</span>
+                <?php if ($contact) : ?>
+                    <h4><?php echo $contact['gpr_contact_h4']; ?></h4>
+                    <p><?php echo $contact['gpr_contact_paragraph']; ?></p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Location</span>
+                            </div>
+                            <p>:<?php echo $contact['gpr_contact_location']; ?></p>
                         </div>
-                        <p>:<?php echo $contact['contact_location']; ?></p>
-                    </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-phone-alt"></i>
                                 <span>Phone</span>
                             </div>
-                            <p>:<?php echo $contact['contact_phone_number']; ?></p>
+                            <p>:<?php echo $contact['gpr_contact_phone_number']; ?></p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-envelope"></i>
                                 <span>Email</span>
                             </div>
-                            <p>:<?php echo $contact['contact_email_address']; ?></p>
+                            <p>:<?php echo $contact['gpr_contact_email_address']; ?></p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-wifi"></i>
                                 <span>Website</span>
                             </div>
-                            <p>:<?php echo $contact['contact_website']; ?></p>
+                            <p>:<?php echo $contact['gpr_contact_website']; ?></p>
                         </div>
                         <div class="contact-item">
                             <div class="icon">
                                 <i class="fas fa-globe"></i>
                                 <span>Languages</span>
                             </div>
-                            <p>:<?php echo $contact['contact_languages']; ?></p>
+                            <p>:<?php echo $contact['gpr_contact_languages']; ?></p>
                         </div>
                         <div class="contact-icons">
                             <div class="contact-icon">
@@ -73,9 +75,9 @@
                             </div>
                         </div>
                     </div>
-            <?php endif; ?>
+                <?php endif; ?>
             </div>
-            
+
             <div class="right-contact">
                 <?php echo do_shortcode('[fluentform id="1"]'); ?>
             </div>
