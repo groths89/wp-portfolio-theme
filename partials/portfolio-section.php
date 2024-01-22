@@ -5,7 +5,7 @@ $args = array(
     'posts_per_page' => 3
 );
 $the_query = new WP_Query($args);
-$portfolio = get_field('portfolio');
+$portfolio = get_field('gpr_portfolio');
 ?>
 
 <section class="section sec3 portfolio" id="portfolio">
