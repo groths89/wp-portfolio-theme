@@ -1,10 +1,10 @@
 <?php
 global $post;
 $term = get_queried_object();
-$projects = new WP_Query(array('post_type' => 'project'));
-$skills = new WP_Query(array('post_type' => 'skill'));
+$projects = new WP_Query(array('post_type' => 'projects'));
+$skills = new WP_Query(array('post_type' => 'skills'));
 $programmingSkillsQuery = new WP_Query(array(
-    'post_type' => 'skill',
+    'post_type' => 'skills',
     'tax_query' => array(
         array(
             'taxonomy' => 'skill-category',
@@ -14,7 +14,7 @@ $programmingSkillsQuery = new WP_Query(array(
     ),
 ));
 $markupSkillsQuery = new WP_Query(array(
-    'post_type' => 'skill',
+    'post_type' => 'skills',
     'tax_query' => array(
         array(
             'taxonomy' => 'skill-category',
@@ -24,7 +24,7 @@ $markupSkillsQuery = new WP_Query(array(
     ),
 ));
 $scriptingSkillsQuery = new WP_Query(array(
-    'post_type' => 'skill',
+    'post_type' => 'skills',
     'tax_query' => array(
         array(
             'taxonomy' => 'skill-category',
@@ -34,7 +34,7 @@ $scriptingSkillsQuery = new WP_Query(array(
     ),
 ));
 $otherSkillsQuery = new WP_Query(array(
-    'post_type' => 'skill',
+    'post_type' => 'skills',
     'tax_query' => array(
         array(
             'taxonomy' => 'skill-category',
@@ -44,7 +44,7 @@ $otherSkillsQuery = new WP_Query(array(
     ),
 ));
 $softSkillsQuery = new WP_Query(array(
-    'post_type' => 'skill',
+    'post_type' => 'skills',
     'tax_query' => array(
         array(
             'taxonomy' => 'skill-category',
@@ -53,7 +53,7 @@ $softSkillsQuery = new WP_Query(array(
         )
     ),
 ));
-$events = new WP_Query(array('post_type' => 'event'));
+$events = new WP_Query(array('post_type' => 'events'));
 $about = get_field('about');
 $skill = get_field('skill');
 $skill_category = get_field('gpr_skill_category', $term);
