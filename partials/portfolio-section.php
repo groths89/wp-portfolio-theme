@@ -1,7 +1,7 @@
 <?php
 global $post;
 $args = array(
-    'post_type' => 'project',
+    'post_type' => 'projects',
     'posts_per_page' => 3
 );
 $the_query = new WP_Query($args);
@@ -35,8 +35,8 @@ $portfolio = get_field('gpr_portfolio');
                         <h3><?php the_title(); ?></h3>
                         <div class="icons">
                             <a class="icon" href="<?php echo esc_attr(the_permalink($post)); ?>"><i class="fas fa-info"></i></a>
-                            <a class="icon" target="_blank" href="<?php echo esc_attr(get_field('github_link')); ?>"><i class="fab fa-github"></i></a>
-                            <a class="icon" target="_blank" href="<?php echo esc_attr(get_field('external_project_link')); ?>"><i class="fas fa-external-link-alt"></i></a>
+                            <a class="icon" target="_blank" href="<?php echo esc_attr(get_field('gpr_github_link')); ?>"><i class="fab fa-github"></i></a>
+                            <a class="icon" target="_blank" href="<?php echo esc_attr(get_field('gpr_external_project_link')); ?>"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
