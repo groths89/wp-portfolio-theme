@@ -59,19 +59,19 @@ $instagram = get_field('gpr_instagram');
                         </div>
                         <div class="contact-icons">
                             <div class="contact-icon">
-                                <a href="<?php echo $facebook['url']; ?>" target="_blank"><i class="<?php echo $facebook['icon']; ?>"></i></a>
+                                <a href="<?php echo $facebook['gpr_url']; ?>" target="_blank"><i class="<?php echo $facebook['gpr_icon']; ?>"></i></a>
                             </div>
                             <div class="contact-icon">
-                                <a href="<?php echo $github['url']; ?>" target="_blank"><i class="<?php echo $github['icon']; ?>"></i></a>
+                                <a href="<?php echo $github['gpr_url']; ?>" target="_blank"><i class="<?php echo $github['gpr_icon']; ?>"></i></a>
                             </div>
                             <div class="contact-icon">
-                                <a href="<?php echo $linkedin['url']; ?>" target="_blank"><i class="<?php echo $linkedin['icon']; ?>"></i></a>
+                                <a href="<?php echo $linkedin['gpr_url']; ?>" target="_blank"><i class="<?php echo $linkedin['gpr_icon']; ?>"></i></a>
                             </div>
                             <div class="contact-icon">
-                                <a href="<?php echo $twitter['url']; ?>" target="_blank"><i class="<?php echo $twitter['icon']; ?>"></i></a>
+                                <a href="<?php echo $twitter['gpr_url']; ?>" target="_blank"><i class="<?php echo $twitter['gpr_icon']; ?>"></i></a>
                             </div>
                             <div class="contact-icon">
-                                <a href="<?php echo $instagram['url']; ?>" target="_blank"><i class="<?php echo $instagram['icon']; ?>"></i></a>
+                                <a href="<?php echo $instagram['gpr_url']; ?>" target="_blank"><i class="<?php echo $instagram['gpr_icon']; ?>"></i></a>
                             </div>
                         </div>
                     </div>
