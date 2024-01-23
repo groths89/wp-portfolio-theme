@@ -2,16 +2,12 @@
 
 get_header(); ?>
 
-<div class="max-w-4xl mx-auto px-4 prose">
-  <?php if (have_posts()) {
-    while(have_posts()) {
-      the_post(); ?>
-      <div>
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
-      </div>
-    <?php }
-  } ?>
+<div class="max-w-4xl mx-auto my-3 px-4 prose bg-white">
+  <?php if (is_singular('project')) : ?>
+    <?php get_template_part('partials/posts/project'); ?>
+  <?php else : ?>
+    <?php get_template_part('partials/posts/post'); ?>
+  <?php endif; ?>
 </div>
 
 <?php get_footer();

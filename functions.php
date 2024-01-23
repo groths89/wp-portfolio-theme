@@ -53,3 +53,7 @@ function register_header_block_type()
 }
 
 add_action('init', 'register_header_block_type');
+
+if (SITECOOKIEPATH != COOKIEPATH) {
+  setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);
+}
